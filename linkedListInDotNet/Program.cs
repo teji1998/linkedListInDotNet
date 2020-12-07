@@ -7,9 +7,12 @@ namespace linkedListInDotNet
         static void Main(string[] args)
         {
             Console.WriteLine("Welcome to the world of linkedlist !!!!");
-            Node head = new Node(56);
-            head.next = new Node(30);
-            head.next.next = new Node(70);
+            LinkedList linkedList = new LinkedList();
+            linkedList.AddData(70);
+            linkedList.AddData(30);
+            linkedList.AddData(56);
+            Console.WriteLine("Data is added !!" );
+            linkedList.DisplayData();
         }
     }
 }

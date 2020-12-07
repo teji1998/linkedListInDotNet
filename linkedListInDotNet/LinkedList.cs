@@ -6,18 +6,25 @@ namespace linkedListInDotNet
 {
     public class LinkedList
     {
-        internal Node head;
+        public Node head;
+        public Node tail;
          public LinkedList()
         {
             this.head = null;
+            this.tail = null;
         }
 
+        
         public void AddData(int data)
         {
             Node node = new Node(data);
             if (this.head == null)
             {
                 this.head = node;
+            }
+            if (this.tail == null)
+            {
+                tail = node;
             }
             else
             {
@@ -33,6 +40,7 @@ namespace linkedListInDotNet
             if (this.head == null)
             {
                 Console.WriteLine("The list is empty!!!!");
+                return ;
             }
             else
             {
@@ -43,6 +51,39 @@ namespace linkedListInDotNet
                     temporary = temporary.next;
                 }
             }
+        }
+
+        public void AppendData(int data)
+        {
+            Node node = new Node(data);
+            if (this.head == null)
+            {
+                this.head = node;
+            }
+            if (this.tail == null)
+            {
+                this.tail = node;
+            }
+            else
+            {
+                this.tail.next = node;
+                this.tail = node;
+            }
+        }
+
+        public int CheckingFirstElement()
+        {
+            return this.head.data;
+        }
+
+        public int CheckingLastElement()
+        {
+            return this.tail.data;
+        }
+
+        public int CheckingMiddleElement()
+        {
+            return this.head.next.data;
         }
     }
 }

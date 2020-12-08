@@ -141,30 +141,45 @@ namespace linkedListTest
         public void givenElements_WhenPopped_ShouldRemoveElementOnTop()
         {
             Stack stack = new Stack();
-            int myFirstElement = 70;
-            int mySecondElement = 30;
-            int myThirdElement = 56;
-            stack.Push(myFirstElement);
-            stack.Push(mySecondElement);
-            stack.Push(myThirdElement);
+            int firstElement = 70;
+            int secondElement = 30;
+            int thirdElement = 56;
+            stack.Push(firstElement);
+            stack.Push(secondElement);
+            stack.Push(thirdElement);
             stack.Pop();
             int peek = stack.Peek();
-            Assert.AreEqual(mySecondElement, peek);
+            Assert.AreEqual(secondElement, peek);
         }
 
         [TestMethod]
         public void givenElements_WhenEmptied_ShouldGiveZeroSize()
         {
             Stack stack = new Stack();
-            int myFirstElement = 70;
-            int mySecondElement = 30;
-            int myThirdElement = 56;
-            stack.Push(myFirstElement);
-            stack.Push(mySecondElement);
-            stack.Push(myThirdElement);
+            int firstElement = 70;
+            int secondElement = 30;
+            int thirdElement = 56;
+            stack.Push(firstElement);
+            stack.Push(secondElement);
+            stack.Push(thirdElement);
             stack.EmptyingTheStack();
             int size = stack.Size();
             Assert.AreEqual(0, size);
+        }
+
+        [TestMethod]
+        public void givenElements_WhenCheckedIFItIsEmpty_ShouldReturnTrueIfEmpty()
+        {
+            Stack stack = new Stack();
+            int firstElement = 70;
+            int secondElement = 30;
+            int thirdElement = 56;
+            stack.Push(firstElement);
+            stack.Push(secondElement);
+            stack.Push(thirdElement);
+            stack.EmptyingTheStack();
+            bool result = stack.IsEmpty();
+            Assert.IsTrue(result);
         }
     }
 }

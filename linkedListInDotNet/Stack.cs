@@ -37,6 +37,18 @@ namespace linkedListInDotNet
             }
         }
 
+        public bool IsEmpty()
+        {
+            if (Size() == 0)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
         public int Size()
         {
             return linkedList.Size();

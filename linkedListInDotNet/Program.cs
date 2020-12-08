@@ -8,16 +8,21 @@ namespace linkedListInDotNet
         {
             Console.WriteLine("Welcome to the world of linkedlist !!!!");
             LinkedList linkedList = new LinkedList();
-            linkedList.AddData(56);
-            linkedList.AppendData(30);
-            linkedList.AppendData(70);
+            int firstNode = 56;
+            int secondNode = 30;
+            int thirdNode = 40;
+            int fourthNode = 70;
+            linkedList.AppendData(firstNode);
+            linkedList.AppendData(secondNode);
+            linkedList.AppendData(fourthNode);
+            linkedList.InsertData(3, thirdNode);
+            linkedList.DisplayData();
             Console.WriteLine("Data is added !!" );
             //linkedList.Pop();
-            linkedList.PopLast();
+            //linkedList.PopLast();
+            Console.WriteLine(linkedList.SearchData(30));
             linkedList.DisplayData();
-            Console.WriteLine("Checking first element : " + linkedList.CheckingFirstElement());
-            Console.WriteLine("Checking middle elemnet : " + linkedList.CheckingMiddleElement());
-            Console.WriteLine("Checking last element : " + linkedList.CheckingLastElement());
+            
         }
     }
 }

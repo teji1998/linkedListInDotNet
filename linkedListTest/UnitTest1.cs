@@ -24,10 +24,8 @@ namespace linkedListTest
             linkedList.AddData(70);
             linkedList.AddData(30);
             linkedList.AddData(56);
-            int nodeOne = linkedList.CheckingFirstElement();
-            int nodeTwo = linkedList.CheckingMiddleElement();
-            int nodeThree = linkedList.CheckingLastElement();
-            bool result = nodeOne.Equals(thirdNode) && nodeTwo.Equals(secndNode) && nodeThree.Equals(firstNode);
+            bool result = linkedList.head.data.Equals(thirdNode) && linkedList.head.next.data.Equals(secndNode)
+                                                                    && linkedList.tail.data.Equals(firstNode);
             Assert.IsTrue(result);
         }
 
@@ -42,8 +40,7 @@ namespace linkedListTest
             linkedList.AppendData(secondNode);
             linkedList.AppendData(thirdNode);
             linkedList.Pop();
-            int NodeOne = linkedList.CheckingFirstElement();
-            bool result = NodeOne.Equals(secondNode);
+            bool result = linkedList.head.data.Equals(secondNode);
             Assert.IsTrue(result);
 
         }
@@ -75,11 +72,8 @@ namespace linkedListTest
             linkedList.AppendData(nodeOne);
             linkedList.AppendData(nodeTwo);
             linkedList.AppendData(nodeThree);
-            int firstNode = linkedList.CheckingFirstElement();
-            int secondNode = linkedList.CheckingMiddleElement();
-            int thirdNode = linkedList.CheckingLastElement();
-
-            bool result = firstNode.Equals(nodeOne) && secondNode.Equals(nodeTwo) && thirdNode.Equals(nodeThree);
+            bool result = linkedList.head.data.Equals(nodeOne) && linkedList.head.next.data.Equals(nodeTwo)
+                                                                     && linkedList.tail.data.Equals(nodeThree);
             Assert.IsTrue(result);
         }
 
@@ -93,9 +87,8 @@ namespace linkedListTest
             linkedList.AppendData(firstNode);
             linkedList.AppendData(thirdNode);
             linkedList.InsertData(2, secondNode);
-
-            int nodeTwo = linkedList.CheckingMiddleElement();
-            bool result = secondNode.Equals(nodeTwo);
+            bool result = linkedList.head.data.Equals(firstNode) && linkedList.head.next.data.Equals(secondNode)
+                                                                    && linkedList.tail.data.Equals(thirdNode);
             Assert.IsTrue(result);
         }
 
@@ -110,6 +103,21 @@ namespace linkedListTest
             linkedList.AppendData(thirdNode);
             int searchObject = linkedList.SearchData(secondNode);
             Assert.AreEqual(secondNode, searchObject);
+        }
+
+        [TestMethod]
+        public void givenThreeValues_WhenSearchedForANumberAndInsertedValueThere_shouldReturnTrue()
+        {
+            int firstNode = 56;
+            int secondNode = 30;
+            int thirdNode = 40;
+            int fourthNode = 70;
+            linkedList.AppendData(firstNode);
+            linkedList.AppendData(secondNode);
+            linkedList.AppendData(fourthNode);
+            linkedList.InsertData(3, thirdNode);
+            int searchResult = linkedList.SearchData(thirdNode);
+            Assert.AreEqual(thirdNode, searchResult);
         }
     }
 }

@@ -107,7 +107,7 @@ namespace linkedListInDotNet
         {
             if (head == null)
             {
-                Console.WriteLine("There is no value present in the list");
+         /**/       Console.WriteLine("There is no value present in the list");
                 return null;
             }
 
@@ -150,22 +150,6 @@ namespace linkedListInDotNet
             }
             return 1;
         }
-
-        public int CheckingFirstElement()
-        {
-            return this.head.data;
-        }
-
-        public int CheckingLastElement()
-        {
-            return this.tail.data;
-        }
-
-        public int CheckingMiddleElement()
-        {
-            return this.head.next.data;
-        }
-
 
     }
 }

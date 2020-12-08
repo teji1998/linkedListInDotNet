@@ -94,7 +94,7 @@ namespace linkedListTest
         }
 
         [TestMethod]
-        public void SearchElementinTheList()
+        public void givenValue_WhenSearchedInLinkedList_ShouldReturnEqual()
         {
             int firstNode = 56;
             int secondNode = 30;
@@ -107,7 +107,7 @@ namespace linkedListTest
         }
 
         [TestMethod]
-        public void givenThreeValues_WhenSearchedForANumberAndInsertedValueThere_shouldReturnTrue()
+        public void givenValues_WhenSearchedForANumberAndInsertedValueThere_shouldReturnTrue()
         {
             int firstNode = 56;
             int secondNode = 30;
@@ -119,6 +119,22 @@ namespace linkedListTest
             linkedList.InsertData(3, thirdNode);
             int searchResult = linkedList.SearchData(thirdNode);
             Assert.AreEqual(thirdNode, searchResult);
+        }
+
+        [TestMethod]
+        public void givenValues_WnenAValueDeletedAndCheckedForSize_ShouldReturnSize()
+        {
+            int firstNode = 56;
+            int secondNode = 30;
+            int thirdNode = 40;
+            int fourthNode = 70;
+            linkedList.AppendData(firstNode);
+            linkedList.AppendData(secondNode);
+            linkedList.AppendData(thirdNode);
+            linkedList.AppendData(fourthNode);
+            linkedList.DeleteData(thirdNode);
+            int size = linkedList.Size();
+            Assert.AreEqual(3, size);
         }
 
 

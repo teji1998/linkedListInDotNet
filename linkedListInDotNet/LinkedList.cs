@@ -163,5 +163,23 @@ namespace linkedListInDotNet
             return size;
         }
 
+        public void DeleteData(int element)
+        {
+            Node temp = head, previous = null;
+            if (temp != null && temp.data == element)
+            {
+                head = temp.next;
+                return;
+            }
+            while (temp != null && temp.data != element)
+            {
+                previous = temp;
+                temp = temp.next;
+            }
+            if (temp == null)
+                return;
+            previous.next = temp.next;
+        }
+
     }
 }

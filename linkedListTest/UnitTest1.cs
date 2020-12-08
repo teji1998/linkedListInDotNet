@@ -217,5 +217,19 @@ namespace linkedListTest
             Assert.IsTrue(result);
 
         }
+
+        [TestMethod]
+        public void givenElementsInQueue_WhenCheckedForSize_ShouldReturnSize()
+        {
+            Queue queue = new Queue();
+            int firstElement = 56;
+            int secondElement = 30;
+            int thirdElement = 70;
+            queue.EnqueueData(firstElement);
+            queue.EnqueueData(secondElement);
+            queue.EnqueueData(thirdElement);
+            int size = queue.Size();
+            Assert.AreEqual(3, size);
+        }
     }
 }

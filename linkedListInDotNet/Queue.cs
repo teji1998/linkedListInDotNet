@@ -43,5 +43,10 @@ namespace linkedListInDotNet
         {
             stack.EmptyingTheStack();
         }
+
+        public int Size()
+        {
+            return linkedList.Size();
+        }
     }
 }

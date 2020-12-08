@@ -8,10 +8,12 @@ namespace linkedListTest
         
     {
         LinkedList linkedList;
+        Stack stack;
 
         public UnitTest1()
         {
             linkedList = new LinkedList();
+            stack = new Stack();
         }
 
         [TestMethod]
@@ -56,8 +58,7 @@ namespace linkedListTest
             linkedList.AppendData(secondNode);
             linkedList.AppendData(thirdNode);
             linkedList.PopLast();
-            int endValue = linkedList.CheckingLastElement();
-            bool result = endValue.Equals(secondNode);
+            bool result = linkedList.tail.data.Equals(secondNode);
             Assert.IsTrue(result);
         }
 

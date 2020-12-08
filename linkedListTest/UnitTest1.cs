@@ -49,5 +49,21 @@ namespace linkedListTest
             bool result = firstNode.Equals(nodeOne) && secondNode.Equals(nodeTwo) && thirdNode.Equals(nodeThree);
             Assert.IsTrue(result);
         }
+
+        [TestMethod]
+        public void givenTwoElements_WhenInsertedThirdElementInBetween_ShouldReturnTrue()
+        {
+            int firstNode = 56;
+            int secondNode = 30;
+            int thirdNode = 70;
+
+            linkedList.AppendData(firstNode);
+            linkedList.AppendData(thirdNode);
+            linkedList.InsertData(2, secondNode);
+
+            int nodeTwo = linkedList.CheckingMiddleElement();
+            bool result = secondNode.Equals(nodeTwo);
+            Assert.IsTrue(result);
+        }
     }
 }

@@ -71,6 +71,38 @@ namespace linkedListInDotNet
             }
         }
 
+        public void InsertData(int position, int data)
+        {
+            Node node = new Node(data);
+            if (position < 1)
+            {
+                Console.WriteLine("The position is not valid !!!!");
+            }
+            else if (position == 1)
+            {
+                node.next = head;
+                head = node;
+            }
+            else
+            {
+                Node temporary = head;
+                try
+                {
+                    while (position > 2)
+                    {
+                        temporary = temporary.next;
+                        position--;
+                    }
+                    node.next = temporary.next;
+                    temporary.next = node;
+                }
+                catch (NullReferenceException)
+                {
+                    System.Console.WriteLine("The index given is out of range !!!");
+                }
+            }
+        }
+
         public int CheckingFirstElement()
         {
             return this.head.data;
@@ -85,5 +117,7 @@ namespace linkedListInDotNet
         {
             return this.head.next.data;
         }
+
+
     }
 }

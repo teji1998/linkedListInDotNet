@@ -12,6 +12,7 @@ namespace linkedListInDotNet
             linkedList.AppendData(30);
             linkedList.AppendData(70);
             Console.WriteLine("Data is added !!" );
+            linkedList.Pop();
             linkedList.DisplayData();
             Console.WriteLine("Checking first element : " + linkedList.CheckingFirstElement());
             Console.WriteLine("Checking middle elemnet : " + linkedList.CheckingMiddleElement());

@@ -31,7 +31,24 @@ namespace linkedListTest
             Assert.IsTrue(result);
         }
 
-        
+        [TestMethod]
+        public void givenThreeNumbers_WhenRemovedFirstNumber_ShouldReturnSecondNumberHasFirstNumber()
+        {
+            int firstNode = 56;
+            int secondNode = 30;
+            int thirdNode = 70;
+
+            linkedList.AppendData(firstNode);
+            linkedList.AppendData(secondNode);
+            linkedList.AppendData(thirdNode);
+            linkedList.Pop();
+            int NodeOne = linkedList.CheckingFirstElement();
+            bool result = NodeOne.Equals(secondNode);
+            Assert.IsTrue(result);
+
+        }
+
+
         [TestMethod]
         public void givenThreeNumbers_WhenAppendedToLinkedList_ShouldBeAddedAtLast()
         {

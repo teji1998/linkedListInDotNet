@@ -103,6 +103,19 @@ namespace linkedListInDotNet
             }
         }
 
+        public Node Pop()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("There is no value present in the list");
+                return null;
+            }
+
+            Node temporaryNode = head;
+            head = head.next;
+            return temporaryNode;
+        }
+
         public int CheckingFirstElement()
         {
             return this.head.data;

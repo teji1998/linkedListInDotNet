@@ -98,5 +98,18 @@ namespace linkedListTest
             bool result = secondNode.Equals(nodeTwo);
             Assert.IsTrue(result);
         }
+
+        [TestMethod]
+        public void SearchElementinTheList()
+        {
+            int firstNode = 56;
+            int secondNode = 30;
+            int thirdNode = 70;
+            linkedList.AppendData(firstNode);
+            linkedList.AppendData(secondNode);
+            linkedList.AppendData(thirdNode);
+            int searchObject = linkedList.SearchData(secondNode);
+            Assert.AreEqual(secondNode, searchObject);
+        }
     }
 }

@@ -137,6 +137,20 @@ namespace linkedListInDotNet
             }
         }
 
+        public int SearchData(int data)
+        {
+            Node temporary = head;
+            while (temporary != null)
+            {
+                if (temporary.data == data)
+                {
+                    return temporary.data;
+                }
+                temporary = temporary.next;
+            }
+            return 1;
+        }
+
         public int CheckingFirstElement()
         {
             return this.head.data;

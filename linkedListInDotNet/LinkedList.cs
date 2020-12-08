@@ -14,7 +14,10 @@ namespace linkedListInDotNet
             this.endNode = null;
         }
 
-        
+        /// <summary>
+        /// Adds the data.
+        /// </summary>
+        /// <param name="data">The data.</param>
         public void AddData(int data)
         {
             Node node = new Node(data);
@@ -35,7 +38,10 @@ namespace linkedListInDotNet
             Console.WriteLine("{0} inserted  in linked list. " , node.data);
         }
 
-        public void DisplayData()
+        /// <summary>
+        /// Displays the data.
+        /// </summary>
+/        public void DisplayData()
         {
             if (this.head == null)
             {
@@ -53,6 +59,11 @@ namespace linkedListInDotNet
             }
         }
 
+        /// <summary>
+        /// Appends the data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <returns></returns>
         public void AppendData(int data)
         {
             Node node = new Node(data);
@@ -71,6 +82,12 @@ namespace linkedListInDotNet
             }
         }
 
+        /// <summary>
+        /// Inserts the data.
+        /// </summary>
+        /// <param name="position">The position.</param>
+        /// <param name="data">The data.</param>
+        /// <returns></returns>
         public void InsertData(int position, int data)
         {
             Node node = new Node(data);
@@ -103,6 +120,10 @@ namespace linkedListInDotNet
             }
         }
 
+        /// <summary>
+        /// Removes the first element.
+        /// </summary>
+        /// <returns></returns>
         public Node Pop()
         {
             if (head == null)
@@ -116,6 +137,10 @@ namespace linkedListInDotNet
             return temporaryNode;
         }
 
+        /// <summary>
+        /// Removes the last element.
+        /// </summary>
+        /// <returns></returns>
         public Node PopLast()
         {
             if (head == null)
@@ -137,6 +162,11 @@ namespace linkedListInDotNet
             }
         }
 
+        /// <summary>
+        /// Searches the data.
+        /// </summary>
+        /// <param name="data">The data.</param>
+        /// <returns></returns>
         public int SearchData(int data)
         {
             Node temporary = head;
@@ -151,6 +181,10 @@ namespace linkedListInDotNet
             return 1;
         }
 
+        /// <summary>
+        /// Gives the size
+        /// </summary>
+        /// <returns></returns>
         public int Size()
         {
             Node tempNode = this.head;
@@ -163,6 +197,11 @@ namespace linkedListInDotNet
             return size;
         }
 
+        /// <summary>
+        /// Deletes the data.
+        /// </summary>
+        /// <param name="element">The element.</param>
+        /// <returns></returns>
         public void DeleteData(int element)
         {
             Node temp = head, previous = null;

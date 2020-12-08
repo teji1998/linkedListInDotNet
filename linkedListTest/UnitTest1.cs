@@ -18,13 +18,16 @@ namespace linkedListTest
             queue = new Queue();
         }
 
+        /// <summary>
+        /// Given three numbers when added to linked list should have last number added at front.
+        /// </summary>
         [TestMethod]
         public void givenThreeNumbers_WhenAddedToLinkedList_ShouldHaveLastNumberAddedAtFront()
         {
             int firstNode = 70;
             int secndNode = 30;
             int thirdNode = 56;
-
+             
             linkedList.AddData(70);
             linkedList.AddData(30);
             linkedList.AddData(56);
@@ -33,6 +36,9 @@ namespace linkedListTest
             Assert.IsTrue(result);
         }
 
+        /// <summary>
+        /// Given three numbers when removed first number should return second number has first number.
+        /// </summary>
         [TestMethod]
         public void givenThreeNumbers_WhenRemovedFirstNumber_ShouldReturnSecondNumberHasFirstNumber()
         {
@@ -49,6 +55,9 @@ namespace linkedListTest
 
         }
 
+        /// <summary>
+        /// Given three numbers when removed last number should return second number has last number.
+        /// </summary>
         [TestMethod]
         public void givenThreeNumbers_WhenRemovedLastNumber_ShouldReturnSecondNumberHasLastNumber()
         {
@@ -64,7 +73,9 @@ namespace linkedListTest
             Assert.IsTrue(result);
         }
 
-
+        /// <summary>
+        /// Given three numbers when appended to linked list should be added at last.
+        /// </summary>
         [TestMethod]
         public void givenThreeNumbers_WhenAppendedToLinkedList_ShouldBeAddedAtLast()
         {
@@ -80,6 +91,9 @@ namespace linkedListTest
             Assert.IsTrue(result);
         }
 
+        /// <summary>
+        /// Given two elements when inserted third element in between should return true.
+        /// </summary>
         [TestMethod]
         public void givenTwoElements_WhenInsertedThirdElementInBetween_ShouldReturnTrue()
         {
@@ -95,6 +109,9 @@ namespace linkedListTest
             Assert.IsTrue(result);
         }
 
+        /// <summary>
+        /// Given value when searched in linked list should return equal.
+        /// </summary>
         [TestMethod]
         public void givenValue_WhenSearchedInLinkedList_ShouldReturnEqual()
         {
@@ -108,8 +125,11 @@ namespace linkedListTest
             Assert.AreEqual(secondNode, searchObject);
         }
 
+        /// <summary>
+        /// Given values when searched for a value and inserted value there should return true.
+        /// </summary>
         [TestMethod]
-        public void givenValues_WhenSearchedForANumberAndInsertedValueThere_shouldReturnTrue()
+        public void givenValues_WhenSearchedForAValueAndInsertedValueThere_shouldReturnTrue()
         {
             int firstNode = 56;
             int secondNode = 30;
@@ -123,6 +143,9 @@ namespace linkedListTest
             Assert.AreEqual(thirdNode, searchResult);
         }
 
+        /// <summary>
+        /// Given size of the values wnen a value deleted and checked for size should return the size.
+        /// </summary>
         [TestMethod]
         public void givenValues_WnenAValueDeletedAndCheckedForSize_ShouldReturnSize()
         {
@@ -142,6 +165,9 @@ namespace linkedListTest
 
         //Stack
 
+        /// <summary>
+        /// Given elements when pushed into stack and peeked should return element on top.
+        /// </summary>
         [TestMethod]
         public void givenElements_WhenPushedIntoStackAndPeeked_ShouldReturnElementOnTop()
         { 
@@ -155,6 +181,9 @@ namespace linkedListTest
             Assert.AreEqual(thirdElement, peek);
         }
 
+        /// <summary>
+        /// Given elements when popped should remove element on top.
+        /// </summary>
         [TestMethod]
         public void givenElements_WhenPopped_ShouldRemoveElementOnTop()
         {
@@ -170,6 +199,9 @@ namespace linkedListTest
             Assert.AreEqual(secondElement, peek);
         }
 
+        /// <summary>
+        /// Given size of the elements when emptied should give zero.
+        /// </summary>
         [TestMethod]
         public void givenElements_WhenEmptied_ShouldGiveZeroSize()
         {
@@ -185,6 +217,9 @@ namespace linkedListTest
             Assert.AreEqual(0, size);
         }
 
+        /// <summary>
+        /// Given elements when checked if it is empty should return true if empty.
+        /// </summary>
         [TestMethod]
         public void givenElements_WhenCheckedIFItIsEmpty_ShouldReturnTrueIfEmpty()
         {
@@ -202,6 +237,9 @@ namespace linkedListTest
 
         //Queue
 
+        /// <summary>
+        /// Given elements when added into queue and then removed should return true.
+        /// </summary>
         [TestMethod]
         public void givenElements_WhenAddedIntoQueueAndThenRemoved_ShouldReturnTrue()
         {
@@ -218,6 +256,9 @@ namespace linkedListTest
 
         }
 
+        /// <summary>
+        /// Given size of the elements in queue when checked for size should return.
+        /// </summary>
         [TestMethod]
         public void givenElementsInQueue_WhenCheckedForSize_ShouldReturnSize()
         {

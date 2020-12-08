@@ -9,11 +9,13 @@ namespace linkedListTest
     {
         LinkedList linkedList;
         Stack stack;
+        Queue queue;
 
         public UnitTest1()
         {
             linkedList = new LinkedList();
             stack = new Stack();
+            queue = new Queue();
         }
 
         [TestMethod]
@@ -196,6 +198,24 @@ namespace linkedListTest
             stack.EmptyingTheStack();
             bool result = stack.IsEmpty();
             Assert.IsTrue(result);
+        }
+
+        //Queue
+
+        [TestMethod]
+        public void givenElements_WhenAddedIntoQueueAndThenRemoved_ShouldReturnTrue()
+        {
+            Queue queue = new Queue();
+            int firstElement = 56;
+            int secondElement = 30;
+            int thirdElement = 70;
+            queue.EnqueueData(firstElement);
+            queue.EnqueueData(secondElement);
+            queue.EnqueueData(thirdElement);
+            queue.DequeueData();
+            bool result = queue.IsEmpty();
+            Assert.IsTrue(result);
+
         }
     }
 }

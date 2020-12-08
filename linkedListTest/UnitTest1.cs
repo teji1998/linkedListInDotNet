@@ -152,7 +152,7 @@ namespace linkedListTest
             Assert.AreEqual(mySecondElement, peek);
         }
 
-        /*[TestMethod]
+        [TestMethod]
         public void givenElements_WhenEmptied_ShouldGiveZeroSize()
         {
             Stack stack = new Stack();
@@ -165,6 +165,6 @@ namespace linkedListTest
             stack.EmptyingTheStack();
             int size = stack.Size();
             Assert.AreEqual(0, size);
-        }*/
+        }
     }
 }

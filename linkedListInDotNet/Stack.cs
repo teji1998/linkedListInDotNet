@@ -29,17 +29,17 @@ namespace linkedListInDotNet
             linkedList.Pop();
         }
 
-        /*public void EmptyingTheStack()
+        public void EmptyingTheStack()
         {
             while (Size() != 0)
             {
                 Pop();
             }
-        }*/
+        }
 
-      /*  public int Size()
+        public int Size()
         {
             return linkedList.Size();
-        }*/
+        }
     }
 }

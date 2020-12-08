@@ -116,6 +116,27 @@ namespace linkedListInDotNet
             return temporaryNode;
         }
 
+        public Node PopLast()
+        {
+            if (head == null)
+            {
+                Console.WriteLine("LinkedList is  empty!!!!");
+                return null;
+            }
+            else
+            {
+                Node temporary = head;
+                while (temporary.next.next != null)
+                {
+                    temporary = temporary.next;
+                }
+                Node endNode = temporary.next;
+                temporary.next = null;
+                this.tail = temporary;
+                return endNode;
+            }
+        }
+
         public int CheckingFirstElement()
         {
             return this.head.data;

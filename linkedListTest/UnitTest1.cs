@@ -48,6 +48,22 @@ namespace linkedListTest
 
         }
 
+        [TestMethod]
+        public void givenThreeNumbers_WhenRemovedLastNumber_ShouldReturnSecondNumberHasLastNumber()
+        {
+            int firstNode = 56;
+            int secondNode = 30;
+            int thirdNode = 70;
+
+            linkedList.AppendData(firstNode);
+            linkedList.AppendData(secondNode);
+            linkedList.AppendData(thirdNode);
+            linkedList.PopLast();
+            int endValue = linkedList.CheckingLastElement();
+            bool result = endValue.Equals(secondNode);
+            Assert.IsTrue(result);
+        }
+
 
         [TestMethod]
         public void givenThreeNumbers_WhenAppendedToLinkedList_ShouldBeAddedAtLast()

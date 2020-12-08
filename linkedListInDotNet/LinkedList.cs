@@ -7,11 +7,11 @@ namespace linkedListInDotNet
     public class LinkedList
     {
         public Node head;
-        public Node tail;
+        public Node endNode;
          public LinkedList()
         {
             this.head = null;
-            this.tail = null;
+            this.endNode = null;
         }
 
         
@@ -22,9 +22,9 @@ namespace linkedListInDotNet
             {
                 this.head = node;
             }
-            if (this.tail == null)
+            if (this.endNode == null)
             {
-                tail = node;
+                endNode = node;
             }
             else
             {
@@ -60,14 +60,14 @@ namespace linkedListInDotNet
             {
                 this.head = node;
             }
-            if (this.tail == null)
+            if (this.endNode == null)
             {
-                this.tail = node;
+                this.endNode = node;
             }
             else
             {
-                this.tail.next = node;
-                this.tail = node;
+                this.endNode.next = node;
+                this.endNode = node;
             }
         }
 
@@ -130,10 +130,10 @@ namespace linkedListInDotNet
                 {
                     temporary = temporary.next;
                 }
-                Node endNode = temporary.next;
+                Node finNode = temporary.next;
                 temporary.next = null;
-                this.tail = temporary;
-                return endNode;
+                this.endNode = temporary;
+                return finNode;
             }
         }
 
@@ -149,6 +149,18 @@ namespace linkedListInDotNet
                 temporary = temporary.next;
             }
             return 1;
+        }
+
+        public int Size()
+        {
+            Node tempNode = this.head;
+            int size = 0;
+            while (tempNode != null)
+            {
+                size++;
+                tempNode = tempNode.next;
+            }
+            return size;
         }
 
     }

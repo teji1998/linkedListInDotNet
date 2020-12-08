@@ -27,7 +27,7 @@ namespace linkedListTest
             linkedList.AddData(30);
             linkedList.AddData(56);
             bool result = linkedList.head.data.Equals(thirdNode) && linkedList.head.next.data.Equals(secndNode)
-                                                                    && linkedList.tail.data.Equals(firstNode);
+                                                                    && linkedList.endNode.data.Equals(firstNode);
             Assert.IsTrue(result);
         }
 
@@ -58,7 +58,7 @@ namespace linkedListTest
             linkedList.AppendData(secondNode);
             linkedList.AppendData(thirdNode);
             linkedList.PopLast();
-            bool result = linkedList.tail.data.Equals(secondNode);
+            bool result = linkedList.endNode.data.Equals(secondNode);
             Assert.IsTrue(result);
         }
 
@@ -74,7 +74,7 @@ namespace linkedListTest
             linkedList.AppendData(nodeTwo);
             linkedList.AppendData(nodeThree);
             bool result = linkedList.head.data.Equals(nodeOne) && linkedList.head.next.data.Equals(nodeTwo)
-                                                                     && linkedList.tail.data.Equals(nodeThree);
+                                                                     && linkedList.endNode.data.Equals(nodeThree);
             Assert.IsTrue(result);
         }
 
@@ -89,7 +89,7 @@ namespace linkedListTest
             linkedList.AppendData(thirdNode);
             linkedList.InsertData(2, secondNode);
             bool result = linkedList.head.data.Equals(firstNode) && linkedList.head.next.data.Equals(secondNode)
-                                                                    && linkedList.tail.data.Equals(thirdNode);
+                                                                    && linkedList.endNode.data.Equals(thirdNode);
             Assert.IsTrue(result);
         }
 
@@ -119,6 +119,52 @@ namespace linkedListTest
             linkedList.InsertData(3, thirdNode);
             int searchResult = linkedList.SearchData(thirdNode);
             Assert.AreEqual(thirdNode, searchResult);
+        }
+
+
+        //Stack
+
+        [TestMethod]
+        public void givenElements_WhenPushedIntoStackAndPeeked_ShouldReturnElementOnTop()
+        { 
+            int firstElement = 70;
+            int secondElement = 30;
+            int thirdElement = 56;
+            stack.Push(firstElement);
+            stack.Push(secondElement);
+            stack.Push(thirdElement);
+            int peek = stack.Peek();
+            Assert.AreEqual(thirdElement, peek);
+        }
+
+        [TestMethod]
+        public void givenElements_WhenPopped_ShouldRemoveElementOnTop()
+        {
+            Stack stack = new Stack();
+            int myFirstElement = 70;
+            int mySecondElement = 30;
+            int myThirdElement = 56;
+            stack.Push(myFirstElement);
+            stack.Push(mySecondElement);
+            stack.Push(myThirdElement);
+            stack.Pop();
+            int peek = stack.Peek();
+            Assert.AreEqual(mySecondElement, peek);
+        }
+
+        [TestMethod]
+        public void givenElements_WhenEmptied_ShouldGiveZeroSize()
+        {
+            Stack stack = new Stack();
+            int myFirstElement = 70;
+            int mySecondElement = 30;
+            int myThirdElement = 56;
+            stack.Push(myFirstElement);
+            stack.Push(mySecondElement);
+            stack.Push(myThirdElement);
+            stack.EmptyingTheStack();
+            int size = stack.Size();
+            Assert.AreEqual(0, size);
         }
     }
 }
